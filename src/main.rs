@@ -44,7 +44,6 @@ fn main() {
 
             // and in future also :)
             // ...
-
             _ => not_found,
         }
     })
@@ -83,7 +82,7 @@ fn todos(list: &mut TodoList) -> Response {
     let json = list
         .get_items()
         .iter()
-        .map(|(status, item)| format!("{{ name: \"{item}\", checked: {status} }}"))
+        .map(|(status, item)| format!("{{ \"name\": \"{item}\", \"checked\": {status} }}"))
         .collect::<Vec<_>>()
         .join(", ");
 
